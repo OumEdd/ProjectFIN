@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300&family=Poppins:wght@200;300&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+footer {
+    width: 100%;
+    background-image: linear-gradient(to right, #f3e9c8, #a49369);
+}
+.container .row p {
+    color: #252525;
+    font-weight: bold;
+}
+.container .row h4 {
+    color: #ac5209;
+    font-size: 24px;
+    font-weight: 700;
+}
+.container .row p a {
+    color: rgb(97, 31, 11);
+    font-weight: 700;
+}
+.container .row p a:hover {
+    color: #c45e1a;
+}
+.col-md-7 p a strong {
+    color: #ac5209;
+    font-weight: 700;
+}
+.col-md-7 p {
+    font-size: 15px;
+    color: #030303;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul li a {
+    color: white;
+}
+ul li a:hover {
+    color: #ac5209;
+}
