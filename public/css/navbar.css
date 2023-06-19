@@ -89,3 +89,11 @@
         overflow: scroll;
     }
 }
+
+.navbar-light .navbar-toggler {
+    border: none;
+    color: #fff;
+    border: 2px solid #7f7f7f7f;
+    border-radius: 0;
+    outline: none;
+}
