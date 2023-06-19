@@ -16,7 +16,7 @@ body {
     background: linear-gradient(
         90deg,
         rgba(255, 255, 255, 1) 0%,
-        rgba(251, 232, 209, 1) 50%,
+        rgba(210, 199, 168, 1) 50%,
         rgba(255, 255, 255, 1) 100%
     );
 }
@@ -193,7 +193,7 @@ form {
     color: white;
     border-radius: 6px;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
 }
 #btn {
     margin-left: auto;

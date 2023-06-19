@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/soume.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
      <script src="https://code.jquery.com/jquery-3.6.1.slim.min. js"></script>
      <script src="https: //unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
     <title>Service-Réclamation</title>
@@ -53,67 +53,23 @@
         <div class="form-step form-step-active">
               <div class="input-group" id="input-group">
                 <label for="ville" id="label">Lieu de depot</label>
-                <select class="form-select" aria-label="Default select example" id="ville">
-                    <option selected>Marrakech</option>
-                            <option value="1">Casablanca</option>
-                            <option value="2">Safi</option>
-                            <option value="3">Khouribga</option>
-                            <option value="4">Beni Mellal</option>
-                            <option value="5">El kella des sraghna</option>
+                <select class="form-select" aria-label="Default select example" id="ville" name="ville">
+                    @foreach ($nom_ville as $data )
+                    <option value="{{$data->id_ville}}">{{$data->nom_ville}}</option>
+                    @endforeach
+                        
+                            
                 </select>   
               </div>
             </div>
              <div class="form-step form-step-active">
               <div class="input-group" id="input-group">
                 <label for="service" id="label" class="" >Service</label>
-                <select class="form-select" aria-label="Default select example" id="service">
-                    <option selected>Service</option>
-                           <option>MAINTENANCE</option>
-                              <option>INDUSTRIEL TRANSVERSAL</option>
-                              <option>FORCE DE VENTE</option>
-                              <option>ACHAT</option>
-                              <option>ADMINISTRATION CREDITS</option>
-                              <option>PRODUCTION</option>
-                              <option>COMMERCIAL TRANSVERSAL</option>
-                              <option>PLANIFICATION ET CONTROLE REALISATION </option>
-                              <option>CONTROLE OPERATIONNEL</option>
-                              <option>DIRECTION GÉNÉRALE</option>
-                              <option>ORDONNANCEMENT BPE</option>
-                              <option>CONTROLE QUALITE PRODUIT</option>
-                              <option>SUPPLY CHAIN TRANSVERSE</option>
-                              <option>CONTRÔLE DE GESTION</option>
-                              <option>LOGISTIQUE</option>
-                              <option>SYSTÈME D'INFORMATION</option>
-                              <option>MEDICAL</option>
-                              <option>TRANSPORT BPE</option>
-                              <option>TRANSPORT PRODUITS PREFABRIQUES</option>
-                              <option>COMPTABILITÉ</option>
-                              <option>RESSOURCES HUMAINES TRANSVERSE</option>
-                              <option>CONTROLE INTERNE</option>
-                              <option>ADMINISTRATION DES VENTES</option>
-                              <option>SERVICES GENERAUX</option>
-                              <option>COMMERCIAL & PRESCRIPTION MARQUE REVETIUM</option>
-                              <option>CAISSE</option>
-                              <option>BUREAU D'ÉTUDE</option>
-                              <option>SERVICE AVANT ET APRES VENTE</option>
-                              <option>ADMINISTRATION PERSONNEL</option>
-                              <option>SYSTEME DE MANAGEMENT INTEGRE</option>
-                              <option>BUREAU DE VENTE</option>
-                              <option>TRSORERIE</option>
-                              <option>RECHERCHES ET DEVELOPPEMENT</option>
-                              <option>RECOUVREMENT & CREDIT MANAGEMENT</option>
-                              <option>ORDONNANCEMENT PRODUITS PREFABRIQUES</option>
-                              <option>JURIDIQUES</option>
-                              <option>COMMUNICATION</option>
-                              <option>SYSTEME D'INFORMATION RH</option>
-                              <option>DEVELOPPEMENT RH</option>
-                              <option>MARKETING</option>
-                              <option>CONCEPTION & DEVELOPPEMENT ARCHITECTURAL</option>
-                              <option>FINANCE TRANSVERSAL</option>
-                              <option>ASSURANCE</option>
-                              <option>STANDARD</option>
-                              <option>AUDIT INTERNE</option>
-                              <option>PRESCRIPTION</option>
+                <select class="form-select" aria-label="Default select example" id="service" name="service">
+                     @foreach ($nom_serv as $data )
+                    <option value="{{$data->id_serv}}">{{$data->nom_serv}}</option>
+                    @endforeach
+                            
                 </select>  
               </div>
              </div>
@@ -129,6 +85,7 @@
 
 
     @endsection
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

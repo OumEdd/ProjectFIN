@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\respoController;
 use App\Http\Controllers\StaticController;
-
+use App\Http\Controllers\villesDropdownController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +29,7 @@ Route::get('/equipe',[StaticController::class,'equipe'] );
 
 // Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
@@ -55,3 +55,6 @@ Route::get('/deleteVille/{id_ville}', [App\Http\Controllers\adminController::cla
 Route::post('/ModifyRespo/{id_respo}', [App\Http\Controllers\adminController::class,'ModifyRespo'])->name('ModifyRespo');
 Route::post('/ModifyServ/{id_serv}', [App\Http\Controllers\adminController::class,'ModifyServ'])->name('ModifyServ');
 Route::post('/ModifyVille/{id_ville}', [App\Http\Controllers\adminController::class,'ModifyVille'])->name('ModifyVille');
+
+//dropdownVille
+// Route::get('/','villesDropdownController@dropVille');
