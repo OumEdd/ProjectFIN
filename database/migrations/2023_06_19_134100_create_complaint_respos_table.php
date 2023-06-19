@@ -18,7 +18,8 @@ return new class extends Migration
             $table->foreign('id_respo')->references('id_respo')->on('responsables')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_rec')->references('id_rec')->on('reclamations')->onUpdate('cascade')->onDelete('cascade');
             $table->string('message_compl');
-            $table->timestamps();
+            $table->timestamp('updated_at_compl')->useCurrent();
+            $table->timestamp('created_at_compl')->useCurrent();
         });
     }
 

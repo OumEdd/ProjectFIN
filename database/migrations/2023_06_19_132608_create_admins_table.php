@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('prenom_admin');
             $table->string('email_admin');
             $table->string('password_admin');
-            $table->timestamps();
+            $table->timestamp('updated_at_admin')->useCurrent();
+            $table->timestamp('created_at_admin')->useCurrent();
         });
     }
 

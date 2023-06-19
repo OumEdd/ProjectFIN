@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id_serv');
             $table->string('nom_serv');
-            $table->timestamps();
+            $table->timestamp('updated_at_serv')->useCurrent();
+            $table->timestamp('created_at_serv')->useCurrent();
         });
     }
 

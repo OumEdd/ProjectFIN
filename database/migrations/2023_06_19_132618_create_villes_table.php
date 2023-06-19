@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('villes', function (Blueprint $table) {
             $table->increments('id_ville');
             $table->string('nom_ville');
-            $table->timestamps();
+            $table->timestamp('updated_at_ville')->useCurrent();
+            $table->timestamp('created_at_ville')->useCurrent();
         });
     }
 
