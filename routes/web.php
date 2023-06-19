@@ -26,12 +26,12 @@ Route::get('/guide',[StaticController::class,'guide'] );
 Route::get('/Responsable',[StaticController::class,'Responsable'] );
 Route::get('/equipe',[StaticController::class,'equipe'] );
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
-// responsable 
+// responsable
 Route::get('/dashboard_responsable', [App\Http\Controllers\respoController::class,'indexDashboardRespo'])->name('dashboardRespo');
 Route::get('/dashboard_admin', [App\Http\Controllers\adminController::class,'indexDashboardAdmin'])->name('dashboardAdmin');
