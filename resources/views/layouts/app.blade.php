@@ -19,7 +19,7 @@
 <body>
 
  <!-- <header>
-    
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
   <a class="navbar-brand" href="#"><img src="{{URL('images/logo.png')}}" alt="menara-holding" width="250"></a>
@@ -55,7 +55,7 @@
     </ul>
   </div>
   </div>
-</nav> 
+</nav>
 </header>
 
         <main class="py-4">
