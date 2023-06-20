@@ -10,16 +10,16 @@
     /* border: 1px solid red; */
 }
 
-html,
+/* html,
 body {
-    background: rgb(255, 255, 255);
+     background: rgb(255, 255, 255);
     background: linear-gradient(
         90deg,
         rgba(255, 255, 255, 1) 0%,
         rgba(210, 199, 168, 1) 50%,
         rgba(255, 255, 255, 1) 100%
-    );
-}
+    ); 
+} */
 
 .banner {
     min-height: 40vh;
