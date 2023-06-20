@@ -18,10 +18,10 @@
     @section("content")
 
 {{-- start section --}}
-     <section class="banner" >
+     <section class="banner" id="banner" >
         <div class="container">
             <div class="row">
-                <div class="col-md-7 ">
+                <div class=" col-md-7 " id="partie1">
                    <h2 class="mb-4" id="h2">BIENVENUE SUR LA PLATEFORME <br><span id="span">MH-RECLAMATION</span> </h2>
                     <p id="p">Ménara Préfa est à votre écoute pour toute demande d'information, question, suggestion ou réclamation.
                         Si vous rencontrez un problème avec nos services, nous vous demandons de remplir tous les champs obligatoires avec des informations précises et détaillées
@@ -29,7 +29,7 @@
                     </p>
                     <a href="https://menara-holding.ma/index.html#" class="btnD1 mb-5">Voire Plus</a>
                 </div>
-                <div class=" col-md-5  pt-2">
+                <div class=" col-md-5  pt-2" id="partie2">
                     <div class="hexagon" id="hexagon">
                         <div class="shape" id="shape">
                              <img src="{{URL("images/14.jpg")}}" alt="" id="img"> 
@@ -48,36 +48,76 @@
   </section>
        {{-- end section --}}
        {{-- start form --}}
-       <form action="" class="form">
-        <h1>Reclamation-Form</h1>
-        <div class="form-step form-step-active">
+       <div class="container" id="container">
+
+        <h1 class="text text-center mb-5">Formulaire de Réclamation</h1>
+        <div class="form-outer">
+            <form action="" class="form">
+                <div class="page">
+                    <div class="field">
+                        <div class="label mb-2">Lieu de dêpot</div>
+                        <select class="form-select mb-5" aria-label="Default select example" id="ville" name="ville">
+                            @foreach ($nom_ville as $data )
+                                <option value="{{$data->id_ville}}">{{$data->nom_ville}}</option>
+                            @endforeach
+                        </select>  
+                    </div>
+                    <div class="field">
+                        <div class="label mb-2">Service</div>
+                        <select class="form-select mb-5" aria-label="Default select example" id="service" name="service">
+                              @foreach ($nom_serv as $data )
+                                <option value="{{$data->id_serv}}">{{$data->nom_serv}}</option>
+                            @endforeach
+                        </select> 
+                    </div>
+                </div>
+               {{-- deuxieme page --}}
+
+                 <div class="page">
+                    <div class="title mb-">Rédigez votre Réclamation</div>
+                       <div class="field">
+                        <div class="label"></div>
+                        <div class="form-floating">
+                             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                        </div>
+                    </div>
+
+                     <div class="field btns">
+                        <button class="nest-1 next">Envoyez</button>
+                    </div>
+
+                 </div>
+            </form>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        
+        {{-- <div class="form-step form-step-active">
               <div class="input-group" id="input-group">
                 <label for="ville" id="label">Lieu de depot</label>
-                <select class="form-select" aria-label="Default select example" id="ville" name="ville">
-                    @foreach ($nom_ville as $data )
-                    <option value="{{$data->id_ville}}">{{$data->nom_ville}}</option>
-                    @endforeach
-                        
-                            
-                </select>   
+                 
               </div>
             </div>
              <div class="form-step form-step-active">
               <div class="input-group" id="input-group">
                 <label for="service" id="label" class="" >Service</label>
-                <select class="form-select" aria-label="Default select example" id="service" name="service">
-                     @foreach ($nom_serv as $data )
-                    <option value="{{$data->id_serv}}">{{$data->nom_serv}}</option>
-                    @endforeach
-                            
-                </select>  
+                 
               </div>
              </div>
                     <div class="">
                          <a href="" class="btn btn-next width-50 ml-auto" id="btn">Next</a>
                     </div>
         </div>
-       </form>
+       </form> --}}
        {{-- end form --}}
 
 

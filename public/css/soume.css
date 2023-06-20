@@ -152,23 +152,88 @@ body {
     font-size: 16px;
     font-weight: 200;
 }
+@media screen and (max-width: 1200px) {
+    #banner,
+    #partie1,
+    #partie2 {
+        width: 80%;
+        margin-left: 70px;
+    }
+    #partie2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 750px) {
+    #banner {
+        width: 100%;
+        padding: 0;
+    }
+    #banner,
+    #partie1,
+    #partie2 {
+        float: none;
+        width: 100%;
+        margin: 40px auto;
+    }
+}
+@media screen and (max-width: 550px){
+ #banner {
+        width: 100%;
+        padding: 0;
+    }
+    #partie2{
+        width: 100%;
+    }
+     #banner,
+    #partie1{
+        float: none;
+        width: 100%;
+        margin: 30px auto;
+    }
+}
 
-/* form */
-/* Global */
+/* Form 
+#container{
+    width: 100%;
+    background: #ccaf90;
+    border-radius: 5px;
+    text-align: center;
+    padding: 50px 35px 10px 35px;
+
+}
+#container, .form-outer{
+    width: 100%;
+}
+*/
+
+
+
+/* ici si ne fonnction pas */
+
+
+
+
+
+
+
+
+
+/*
 #label {
     display: block;
     margin-bottom: 0.9rem;
 }
 #ville,
 #service {
-    display: block;
     width: 100%;
     padding: 0.75rem;
     border: 1px solid red;
     border-radius: 0.25rem;
 }
 
-/* ----- */
+
 form {
     margin: 0;
     display: grid;
@@ -180,7 +245,7 @@ form {
     margin: 0 auto;
     border: 1px solid #a55310;
     border-radius: 6px;
-    padding: 1.5rem;
+    padding: 1rem;
 }
 #input-group {
     margin: 2rem 0;
