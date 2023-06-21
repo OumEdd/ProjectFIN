@@ -51,7 +51,7 @@
             <li><a class="dropdown-item" href=""><i class="fa-regular fa-pen-to-square"
                         style="margin-right:10px"></i>Changer Mot de passe</a></li>
             <hr class="dropdown-divider" />
-            <li><a class="dropdown-item" href=""><i class="fa-solid fa-right-from-bracket"
+            <li><a class="dropdown-item" href="{{route('logoutRespo')}}"><i class="fa-solid fa-right-from-bracket"
                         style="margin-right:10px"></i>Logout</a></li>
         </ul>
         </li>
@@ -66,47 +66,33 @@
                         <a class="nav-link bg-primary text-simple text-uppercase ">
                             <div class="sb-nav-link-icon d-flex align-items-center"><i class="fas fa-user fa-fw"
                                     style="color:#fff"></i>
-                                <div class="mx-2" style="color:#fff;font-size:20px"><span></span>
-                                     <p style="font-size: 13px;color:whitesmoke">Responsable
+                                <div class="mx-2" style="color:#fff;font-size:20px"><span>{{$data->nom_respo}} {{$data->prenom_respo}}</span>
+                                    <p style="font-size: 13px;color:whitesmoke">Responsable
                                     </p>
                                 </div>
                             </div>
                         </a>
                         <div class="sb-sidenav-menu-heading"></div>
                         <div class="link">
-                            <a class="nav-link" href="" style="font-size:18px">
+                            <a class="nav-link" href="{{route('dashboardRespo')}}" style="font-size:18px">
                                 <div class="sb-nav-link-icon"></div>
                                 <i class="fa-solid fa-house-user" style="color: #FDFEFE; margin-right:10px"></i>
-                                Home
+                                Accueil
                             </a>
 
-                            <a class="nav-link" href="" style="font-size:18px">
+                            <a class="nav-link" href="{{route('pageReclamation')}}" style="font-size:18px">
                                 <i class="fa-solid fa-square-root-variable"
                                     style="color: #FDFEFE; margin-right:10px"></i>
-                                Département Mathématique
+                                Réclamation
                             </a>
 
-                            <a class="nav-link" href="" style="font-size:18px">
+                            <a class="nav-link" href="{{route('pageObersation')}}" style="font-size:18px">
                                 <i class="fa-solid fa-code" style="color: #FDFEFE; margin-right:10px"></i>
-                                Département Informatique
+                                Observation
                             </a>
-                            <a class="nav-link" href="" style="font-size:18px">
-                                <i class="fa-solid fa-bolt" style="color: #FDFEFE; margin-right:10px"></i>
-                                Département Physique
-                            </a>
-                            <a class="nav-link" href="" style="font-size:18px">
-                                <i class="fa-solid fa-flask-vial" style="color: #FDFEFE; margin-right:10px"></i>
-                                Département Chimie
-                            </a>
-
-                            <a class="nav-link" href="" style="font-size:18px">
-                                <i class="fa-solid fa-dna" style="color: #FDFEFE; margin-right:10px"></i>
-                                Département Biologie
-                            </a>
-
-                            <a class="nav-link" href="" style="font-size:18px">
-                                <i class="fa-solid fa-hill-rockslide" style="color: #FDFEFE; margin-right:10px"></i>
-                                Département Géologie
+                            <a class="nav-link" href="{{route('pageSuggestion')}}" style="font-size:18px">
+                                <i class="fa-solid fa-code" style="color: #FDFEFE; margin-right:10px"></i>
+                                Suggestion
                             </a>
                         </div>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
@@ -123,6 +109,10 @@
             <main>
                 <div>
                     @yield('dashbordRespo')
+                    @yield('pageSuggestion')
+                    @yield('pageReclamation')
+                    @yield('pageObersation')
+                    @yield('pageTraitRec')
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">

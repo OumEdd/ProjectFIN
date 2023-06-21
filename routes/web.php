@@ -36,7 +36,12 @@ Route::get('/equipe',[StaticController::class,'equipe'] );
 // responsable
 Route::get('/dashboard_responsable', [App\Http\Controllers\respoController::class,'indexDashboardRespo'])->name('dashboardRespo');
 Route::post('/respo', [respoController::class, 'AuthLoginRespo'])->name('AuthLoginRespo');
-
+Route::get('/reclamation', [respoController::class, 'pageReclamation'])->name('pageReclamation');
+Route::get('/obersation', [respoController::class, 'pageObersation'])->name('pageObersation');
+Route::get('/suggestion', [respoController::class, 'pageSuggestion'])->name('pageSuggestion');
+Route::get('/traite_Reclamation/{id}', [respoController::class, 'traiteRec'])->name('traiteRec');
+Route::post('/ajoutRec/{id}', [respoController::class, 'ajoutRec'])->name('ajoutRec');
+Route::get('/logoutRespo', [respoController::class, 'logoutRespo'])->name('logoutRespo');
 
 
 //admin
@@ -55,6 +60,14 @@ Route::get('/deleteVille/{id_ville}', [App\Http\Controllers\adminController::cla
 Route::post('/ModifyRespo/{id_respo}', [App\Http\Controllers\adminController::class,'ModifyRespo'])->name('ModifyRespo');
 Route::post('/ModifyServ/{id_serv}', [App\Http\Controllers\adminController::class,'ModifyServ'])->name('ModifyServ');
 Route::post('/ModifyVille/{id_ville}', [App\Http\Controllers\adminController::class,'ModifyVille'])->name('ModifyVille');
+Route::get('/complaint_responsable', [App\Http\Controllers\adminController::class,'complainRespo'])->name('complainRespo');
+Route::get('/ajouteRespo', [App\Http\Controllers\adminController::class,'ajouteRespo'])->name('ajouteRespo');
+Route::get('/ajouteServ', [App\Http\Controllers\adminController::class,'ajouteServ'])->name('ajouteServ');
+Route::get('/ajouteVille', [App\Http\Controllers\adminController::class,'ajouteVille'])->name('ajouteVille');
+Route::post('/insertRespo', [App\Http\Controllers\adminController::class,'insertRespo'])->name('insertRespo');
+Route::post('/insertServ', [App\Http\Controllers\adminController::class,'insertServ'])->name('insertServ');
+Route::post('/insertVille', [App\Http\Controllers\adminController::class,'insertVille'])->name('insertVille');
+
 
 //dropdownVille
 // Route::get('/','villesDropdownController@dropVille');

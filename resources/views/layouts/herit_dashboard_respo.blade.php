@@ -97,6 +97,10 @@
                         <i class="fa-regular fa-user" style="color: #FDFEFE; margin-right:10px"></i>
                                 Ville
                         </a>
+                        <a class="nav-link" href="{{ route('complainRespo') }}" style="font-size:18px">
+                            <i class="fa-regular fa-user" style="color: #FDFEFE; margin-right:10px"></i>
+                            Complaint_responsable
+                            </a>
                         </div>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
                             data-bs-parent="#sidenavAccordion">
@@ -118,6 +122,10 @@
                     @yield('updateRespo')
                     @yield('updateServ')
                     @yield('updateVille')
+                    @yield('complaintRespo')
+                    @yield('ajouteRespo')
+                    @yield('ajouteServ')
+                    @yield('ajouteVille')
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">

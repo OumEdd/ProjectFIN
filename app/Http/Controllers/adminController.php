@@ -8,6 +8,7 @@ use App\Models\admin;
 use App\Models\responsable;
 use App\Models\service;
 use App\Models\ville;
+use App\Models\complaint_respo;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\session;
 
@@ -15,11 +16,13 @@ class adminController extends Controller
 {
     public function indexDashboardAdmin()
     {
-
+        $comptRespo=count(responsable::all());
+        $comptServ=count(service::all());
+        $comptVille=count(ville::all());
+        $comptCompl=count(complaint_respo::all());
+        $data = admin::where('id_admin', '=', session::get('loginId2'))->first();
         if (session::has('loginId2')) {
-            return view('admin.dashboardAdmin', [
-                'data' => admin::where('id_admin', '=', session::get('loginId2'))->first()
-            ]);
+            return view('admin.dashboardAdmin', compact(['data','comptRespo','comptRespo','comptServ','comptVille','comptCompl']));
         }
     }
     public function AuthLoginAdmin(Request $request)
@@ -159,5 +162,54 @@ class adminController extends Controller
             ->where('id_ville', $id)
             ->delete();
         return back();
+    }
+
+    public function complainRespo(){
+        $compl = DB::table('complaint_respos')
+        ->join('reclamations','reclamations.id_rec','=','complaint_respos.id_rec')
+        ->join('responsables','responsables.id_respo','=','complaint_respos.id_respo')->get();
+        $data = admin::where('id_admin', '=', session::get('loginId2'))->first();
+        return view('admin.complaintRespo',compact('data','compl'));
+    }
+    public function ajouteRespo(){
+        $data = admin::where('id_admin', '=', session::get('loginId2'))->first();
+        return view('admin.ajouteRespo',compact('data'));
+    }
+
+    public function insertRespo(Request $request){
+        DB::table('responsables')->insert([
+            'nom_respo' => $request->input('nom_respo'),
+            'prenom_respo' => $request->input('prenom_respo'),
+            'adresse_respo' => $request->input('adresse_respo'),
+            'email_respo' => $request->input('email_respo'),
+            'ville_trav' => $request->input('ville_trav'),
+            'cin_respo' => $request->input('cin_respo'),
+            'tele_respo' => $request->input('tele_respo'),
+            'password_respo' => $request->input('password_respo'),
+        ]);
+        return back()->with('success', 'ajouter le responsable avec succes');
+    }
+    public function insertServ(Request $request){
+        DB::table('services')->insert([
+            'nom_serv' => $request->input('nom_serv'),
+        ]);
+        return back()->with('success', 'ajouter le service avec succes');
+    }
+
+    public function insertVille(Request $request){
+        DB::table('villes')->insert([
+            'nom_ville' => $request->input('nom_ville'),
+        ]);
+        return back()->with('success', 'ajouter le service avec succes');
+    }
+
+
+    public function ajouteServ(){
+        $data = admin::where('id_admin', '=', session::get('loginId2'))->first();
+        return view('admin.ajouteServe',compact('data'));
+    }
+    public function ajouteVille(){
+        $data = admin::where('id_admin', '=', session::get('loginId2'))->first();
+        return view('admin.ajouteVille',compact('data'));
     }
 }

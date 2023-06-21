@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('service_rec');
             $table->string('message_rec');
             $table->string('type_rec');
+            $table->integer('valid_rec')->default(0);
             $table->timestamp('updated_at_rec')->useCurrent();
             $table->timestamp('created_at_rec')->useCurrent();
         });

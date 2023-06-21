@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('email_respo');
             $table->string('tele_respo');
             $table->string('password_respo');
+            $table->string('ville_trav');
             $table->timestamp('updated_at_admin')->useCurrent();
             $table->timestamp('created_at_admin')->useCurrent();
         });
