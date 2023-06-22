@@ -21,7 +21,7 @@
          {{-- javascript jquery --}}
          <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
           <script defer src="{{ asset('js/resnav.js') }}"></script>
-          
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
@@ -31,12 +31,12 @@
         crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 </head>
 <body>
     <!-- header of pages -->
     <section class="header">
-        
+
 <nav class="navbar navbar-expand-lg ">
   <div class="container">
     <a class="navbar-brand" href="#"><a href=""><img src="{{URL('images/logo.png')}}" alt="menara-holding" width="250"></a>
@@ -59,7 +59,7 @@
             <li><a class="dropdown-item" href="Service_Reclamation">Soumettre une réclamation</a></li>
             <li><a class="dropdown-item" href="Service_Observation">Soumettre une observation</a></li>
             <li><a class="dropdown-item" href="Service_Suggestion">Soumettre une suggestion</a></li>
-            
+
           </ul>
         </li>
         <li class="nav-item">
@@ -74,7 +74,7 @@
         <li class="nav-item">
           <a class="nav-link" href="Responsable">Responsable</a>
         </li>
-       
+
       </ul>
     </div>
   </div>
