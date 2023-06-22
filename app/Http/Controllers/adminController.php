@@ -212,4 +212,39 @@ class adminController extends Controller
         $data = admin::where('id_admin', '=', session::get('loginId2'))->first();
         return view('admin.ajouteVille',compact('data'));
     }
+
+
+
+    public function settingAdmin(){
+        $data = admin::where('id_admin', '=', session::get('loginId2'))->first();
+        return view('admin.settingAdmin',compact(['data']));
+    }
+    public function motPassAdmin(){
+        $data = admin::where('id_admin', '=', session::get('loginId2'))->first();
+        return view('admin.updatePassAdmin',compact('data'));
+    }
+    public function updateSettingAdmin(Request $request){
+        DB::table('Admins')->where('id_admin','=',session::get('loginId2'))->update([
+            'nom_admin' => $request->input('nom_admin'),
+            'prenom_admin' => $request->input('prenom_admin'),
+            'email_admin' => $request->input('email_admin'),
+            'cni_admin' => $request->input('cin_admin')
+        ]);
+        return back()->with('succes', 'modifier les informations avec succes');
+    }
+
+    public function changerMotPasseAdmin(Request $request)
+    {
+        request()->validate([
+            'passeActuel' => 'required',
+            'password' => 'required|min:9|max:50|confirmed',
+        ]);
+        $res = admin::where('id_admin', '=', session::get('loginId2'))->first();
+        if ($request->input('passeActuel') == $res->password_admin) {
+            DB::table('admins')->where('id_admin', '=', session::get('loginId2'))->update(['password_admin' => $request->input('password')]);
+            return back()->with('success', 'Modifié le mot de passe avec succés');
+        } else {
+            return back()->with('fail', 'Le mot de passe actuel incorrect');
+        }
+    }
 }

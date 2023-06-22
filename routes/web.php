@@ -42,7 +42,10 @@ Route::get('/suggestion', [respoController::class, 'pageSuggestion'])->name('pag
 Route::get('/traite_Reclamation/{id}', [respoController::class, 'traiteRec'])->name('traiteRec');
 Route::post('/ajoutRec/{id}', [respoController::class, 'ajoutRec'])->name('ajoutRec');
 Route::get('/logoutRespo', [respoController::class, 'logoutRespo'])->name('logoutRespo');
-
+Route::get('/setting_respo', [respoController::class, 'settingRespo'])->name('settingRespo');
+Route::get('/change_mot_passe_responsable', [respoController::class, 'motPassRespo'])->name('motPassRespo');
+Route::post('/updateSettingRespo', [respoController::class, 'updateSettingRespo'])->name('updateSettingRespo');
+Route::post('/changerMotPasseRespo', [respoController::class, 'changerMotPasseRespo'])->name('changerMotPasseRespo');
 
 //admin
 Route::get('/dashboard_admin', [App\Http\Controllers\adminController::class,'indexDashboardAdmin'])->name('dashboardAdmin');
@@ -67,6 +70,10 @@ Route::get('/ajouteVille', [App\Http\Controllers\adminController::class,'ajouteV
 Route::post('/insertRespo', [App\Http\Controllers\adminController::class,'insertRespo'])->name('insertRespo');
 Route::post('/insertServ', [App\Http\Controllers\adminController::class,'insertServ'])->name('insertServ');
 Route::post('/insertVille', [App\Http\Controllers\adminController::class,'insertVille'])->name('insertVille');
+Route::get('/setting_admin', [adminController::class, 'settingAdmin'])->name('settingAdmin');
+Route::get('/change_mot_de_passe_admin', [adminController::class, 'motPassAdmin'])->name('motPassAdmin');
+Route::post('/updateSettingAdmin', [adminController::class, 'updateSettingAdmin'])->name('updateSettingAdmin');
+Route::post('/changerMotPasseAdmin', [adminController::class, 'changerMotPasseAdmin'])->name('changerMotPasseAdmin');
 
 
 //dropdownVille

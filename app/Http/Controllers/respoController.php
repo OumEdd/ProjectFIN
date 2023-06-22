@@ -10,6 +10,8 @@ use App\Models\complaint_respo;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\session;
 
+use function PHPSTORM_META\map;
+
 class respoController extends Controller
 {
     /**
@@ -115,6 +117,41 @@ class respoController extends Controller
 
             DB::table('reclamations')->where('id_rec','=',$id)->update(['valide_rec' => 1 ]);
             return back()->with('succes', 'traite avec succes');
+        }
+    }
+
+    public function settingRespo(){
+        $data = responsable::where('id_respo', '=', session::get('loginId'))->first();
+        return view('responsable.settingRespo',compact('data'));
+    }
+    public function motPassRespo(){
+        $data = responsable::where('id_respo', '=', session::get('loginId'))->first();
+        return view('responsable.updatePassRespo',compact('data'));
+    }
+    public function updateSettingRespo(Request $request){
+        DB::table('responsables')->where('id_respo','=',session::get('loginId'))->update([
+            'nom_respo' => $request->input('nom_respo'),
+            'prenom_respo' => $request->input('prenom_respo'),
+            'adresse_respo' => $request->input('adresse_respo'),
+            'email_respo' => $request->input('email_respo'),
+            'tele_respo' => $request->input('tele_respo'),
+            'cin_respo' => $request->input('cin_respo')
+        ]);
+        return back()->with('succes', 'modifier les informations avec succes');
+    }
+
+    public function changerMotPasseRespo(Request $request)
+    {
+        request()->validate([
+            'passeActuel' => 'required',
+            'password' => 'required|min:9|max:50|confirmed',
+        ]);
+        $res = responsable::where('id_respo', '=', session::get('loginId'))->first();
+        if ($request->input('passeActuel') == $res->password_respo) {
+            DB::table('responsables')->where('id_respo', '=', session::get('loginId'))->update(['password_respo' => $request->input('password')]);
+            return back()->with('success', 'Modifié le mot de passe avec succés');
+        } else {
+            return back()->with('fail', 'Le mot de passe actuel incorrect');
         }
     }
 }

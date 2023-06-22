@@ -44,11 +44,11 @@
                     data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"
                         style="color: #FDFEFE;"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href=""><i class="fa-solid fa-gear"
+                    <li><a class="dropdown-item" href="{{route('settingRespo')}}"><i class="fa-solid fa-gear"
                                 style="margin-right:10px"></i>Settings</a></li>
                     <hr class="dropdown-divider" />
             </li>
-            <li><a class="dropdown-item" href=""><i class="fa-regular fa-pen-to-square"
+            <li><a class="dropdown-item" href="{{route('motPassRespo')}}"><i class="fa-regular fa-pen-to-square"
                         style="margin-right:10px"></i>Changer Mot de passe</a></li>
             <hr class="dropdown-divider" />
             <li><a class="dropdown-item" href="{{route('logoutRespo')}}"><i class="fa-solid fa-right-from-bracket"
@@ -113,6 +113,8 @@
                     @yield('pageReclamation')
                     @yield('pageObersation')
                     @yield('pageTraitRec')
+                    @yield('settingRespo')
+                    @yield('updatePassRespo')
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">

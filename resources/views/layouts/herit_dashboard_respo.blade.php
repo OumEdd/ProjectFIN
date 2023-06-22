@@ -48,11 +48,11 @@
                     data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"
                         style="color: #FDFEFE;"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href=""><i class="fa-solid fa-gear"
+                    <li><a class="dropdown-item" href="{{route('settingAdmin')}}"><i class="fa-solid fa-gear"
                                 style="margin-right:10px"></i>Settings</a></li>
                     <hr class="dropdown-divider" />
             </li>
-            <li><a class="dropdown-item" href=""><i class="fa-regular fa-pen-to-square"
+            <li><a class="dropdown-item" href="{{route('motPassAdmin')}}"><i class="fa-regular fa-pen-to-square"
                         style="margin-right:10px"></i>Changer Mot de passe</a></li>
             <hr class="dropdown-divider" />
             <li><a class="dropdown-item" href="{{route('logoutAdmin')}}"><i class="fa-solid fa-right-from-bracket"
@@ -126,6 +126,8 @@
                     @yield('ajouteRespo')
                     @yield('ajouteServ')
                     @yield('ajouteVille')
+                    @yield('settingAdmin')
+                    @yield('updatePassAdmin')
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
